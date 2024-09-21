@@ -1,24 +1,31 @@
 document.addEventListener( "DOMContentLoaded", function ()
 {
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides ()
+    function initSlideshow ( slideClass, interval, nextFnName )
     {
-        const slides = document.getElementsByClassName( "slide" );
-        for ( let i = 0; i < slides.length; i++ ) {
-            slides[ i ].style.display = "none"; // Скрываем все слайды
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName( slideClass );
+
+        function showSlides ()
+        {
+            for ( let i = 0; i < slides.length; i++ ) {
+                slides[ i ].style.display = "none"; // Скрываем все слайды
+            }
+            slideIndex = ( slideIndex + 1 ) % slides.length; // Переходим к следующему слайду
+            slides[ slideIndex ].style.display = "block"; // Показываем текущий слайд
+            setTimeout( showSlides, interval ); // Автоматическая смена через заданный интервал
         }
-        slideIndex = ( slideIndex + 1 ) % slides.length; // Переходим к следующему слайду
-        slides[ slideIndex ].style.display = "block"; // Показываем текущий слайд
-        setTimeout( showSlides, 30000 ); // Автоматическая смена каждые 5 секунд
+
+        window[ nextFnName ] = function ( n )
+        {
+            slides[ slideIndex ].style.display = "none"; // Скрываем текущий слайд
+            slideIndex = ( slideIndex + n + slides.length ) % slides.length; // Изменяем индекс
+            slides[ slideIndex ].style.display = "block"; // Показываем новый слайд
+        };
+
+        showSlides(); // Запуск слайдшоу
     }
 
-    window.changeSlide = function ( n )
-    {
-        const slides = document.getElementsByClassName( "slide" );
-        slides[ slideIndex ].style.display = "none"; // Скрываем текущий слайд
-        slideIndex = ( slideIndex + n + slides.length ) % slides.length; // Изменяем индекс
-        slides[ slideIndex ].style.display = "block"; // Показываем новый слайд
-    };
+    // Инициализация слайдшоу с разными параметрами
+    initSlideshow( "slide", 30000, "changeSlide" );
+    initSlideshow( "slide2", 30000, "changeSlide2" );
 } );

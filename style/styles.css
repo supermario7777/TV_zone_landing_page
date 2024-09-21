@@ -2,13 +2,12 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    background-color: #375F97;
     color: #333333;
 }
 
 header {
-    background: #FF6F00;
-    /* Оранжевый цвет */
+    background: #FB6542;
     color: white;
     text-align: center;
     padding: 100px 20px;
@@ -59,8 +58,34 @@ header p {
 }
 
 .slide img {
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#gallery2 {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.slideshow-container2 {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide2 {
+    display: none;
+    /* Все слайды скрыты по умолчанию */
+    text-align: center;
+}
+
+.slide2 img {
+    width: 400px;
+    height: 250px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -74,13 +99,6 @@ header p {
     text-align: center;
 }
 
-footer {
-    background-color: #4B0082;
-    /* Темно-фиолетовый */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
 
 .prev,
 .next {
@@ -100,5 +118,26 @@ footer {
 }
 
 .next {
+    right: 0;
+}
+
+.prev2,
+.next2 {
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    padding: 16px;
+    color: white;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+    user-select: none;
+}
+
+.prev2 {
+    left: 0;
+}
+
+.next2 {
     right: 0;
 }
