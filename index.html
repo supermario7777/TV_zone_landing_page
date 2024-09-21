@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Example</title>
+    <title>TV Zones by Your Friend</title>
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Perfect TV Zones</h1>
+        <p>Transform your living space with custom TV zones</p>
+        <a href="#gallery" class="cta-button">View Our Work</a>
+    </header>
+
+    <section id="gallery">
+        <h2>Our Works</h2>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="images/tv-zone1.jpg" alt="TV Zone 1">
+                <p>Size: 50x70 cm</p>
+                <p>Price: $200</p>
+            </div>
+            <div class="slide">
+                <img src="images/tv-zone2.jpg" alt="TV Zone 2">
+                <p>Size: 60x80 cm</p>
+                <p>Price: $250</p>
+            </div>
+            <div class="slide">
+                <img src="images/tv-zone3.jpg" alt="TV Zone 3">
+                <p>Size: 70x90 cm</p>
+                <p>Price: $300</p>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: friend@example.com</p>
+        <p>Phone: +1234567890</p>
+        <p>Instagram: <a href="https://instagram.com/yourfriend" target="_blank">@yourfriend</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mukhtar's TV Zones. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
