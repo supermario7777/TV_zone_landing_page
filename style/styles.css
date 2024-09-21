@@ -86,7 +86,7 @@ footer {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 25%;
     padding: 16px;
     color: white;
     font-size: 18px;
